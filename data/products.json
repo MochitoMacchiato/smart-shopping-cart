@@ -1,0 +1,8 @@
+[
+  {"id":"P001","barcode":"DEMO001","name":"Rice · 1 kg","priceCentavos":6500,"active":true},
+  {"id":"P002","barcode":"DEMO002","name":"Milk · 1 L","priceCentavos":9500,"active":true},
+  {"id":"P003","barcode":"DEMO003","name":"Bread · 1 loaf","priceCentavos":5800,"active":true},
+  {"id":"P004","barcode":"DEMO004","name":"Instant noodles","priceCentavos":1550,"active":true},
+  {"id":"P005","barcode":"DEMO005","name":"Bottled water · 500 mL","priceCentavos":2000,"active":true},
+  {"id":"P006","barcode":"2000000000015","name":"EAN-13 test product","priceCentavos":2500,"active":true}
+]

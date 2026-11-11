@@ -1,0 +1,16 @@
+__pycache__/
+data/sessions.json
+data/sessions.tmp
+.tmp-pdf-tools/
+.browser-test*/
+firmware/ShoppingCartCamera/wifi_credentials.h
+.arduino-build/
+.barcode-tools/
+.ui-review/
+.secrets/
+database_config.json
+.firestore-deps/
+.venv/
+backups/
+*-firebase-adminsdk-*.json
+*-firebase-adminsdk*.json

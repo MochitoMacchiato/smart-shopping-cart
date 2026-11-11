@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The local Python server uses a server identity with IAM permissions.
+    // Do not open browser writes or share a service-account key with browsers.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

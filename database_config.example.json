@@ -1,0 +1,8 @@
+{
+  "backend": "firestore",
+  "projectId": "YOUR_FIREBASE_PROJECT_ID",
+  "databaseId": "(default)",
+  "workspaceId": "shopping-cart-dev",
+  "cartId": "CART-DEMO-01",
+  "credentialsPath": ".secrets/firebase-service-account.json"
+}
