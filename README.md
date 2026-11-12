@@ -14,7 +14,8 @@ python app.py
 ```
 
 Open **http://127.0.0.1:8000** in your browser. Keep the terminal open. Press Ctrl+C to stop.
-If port 8000 is already occupied, stop the other service first.
+If port 8000 is occupied or blocked, use `python app.py --port 8080` and open
+**http://127.0.0.1:8080** instead. Stop the other service only if you know it is safe to do so.
 
 The dashboard uses a forest-green retail theme with scanning and cart review side by side on desktop.
 Manual barcode entry, photo uploads, camera tuning/frame inspection, and CSV test logs are in expandable

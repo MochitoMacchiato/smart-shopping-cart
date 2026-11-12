@@ -1,5 +1,6 @@
 """Local Smart Shopping prototype. Run: python app.py"""
 import json
+import argparse
 import os
 import re
 import threading
@@ -267,13 +268,22 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Run the local shopping cart dashboard.')
+    parser.add_argument('--port', type=int, default=8000, help='Local HTTP port (default: 8000).')
+    args = parser.parse_args()
+    if not 1 <= args.port <= 65535:
+        parser.error('--port must be between 1 and 65535.')
     try:
         store = configured_store()
     except (ValueError, StorageUnavailable, OSError) as exc:
         raise SystemExit('Database setup error: ' + str(exc))
-    server = ThreadingHTTPServer(('127.0.0.1', 8000), Handler)
+    try:
+        server = ThreadingHTTPServer(('127.0.0.1', args.port), Handler)
+    except OSError as exc:
+        raise SystemExit(f'Cannot open local port {args.port}: {exc}. '
+                         'Check for an existing server, or choose another port: python app.py --port 8080')
     server.store = store
-    print('Smart Shopping: http://127.0.0.1:8000 (Ctrl+C to stop)', flush=True)
+    print(f'Smart Shopping: http://127.0.0.1:{args.port} (Ctrl+C to stop)', flush=True)
     print('Storage: ' + ('Firestore' if not isinstance(store, CartStore) else 'local JSON'), flush=True)
     try:
         server.serve_forever()
